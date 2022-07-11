@@ -1,0 +1,43 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.224.2/containers/docker-existing-dockerfile
+{
+    "name": "IoTeX Peeble firmware",
+    // Sets the run context to one level up instead of the .devcontainer folder.
+    "context": "..",
+    // Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
+    "image": "ceibe07/iotex-pebble-firmware-devcontainer",
+    // "dockerFile": "../Dockerfile",
+    // Set *default* container specific settings.json values on container create.
+    "settings": {
+        // Use bash shell as default
+        "terminal.integrated.defaultProfile.linux": "bash"
+    },
+    // Add the IDs of extensions you want installed when the container is created.
+    "extensions": [
+		"ms-vscode.cpptools",
+		"nordic-semiconductor.nrf-connect-extension-pack",
+		"eamodio.gitlens",
+		"nordic-semiconductor.nrf-connect",
+		"nordic-semiconductor.nrf-devicetree",
+		"nordic-semiconductor.nrf-terminal"
+	],
+    "containerEnv": {
+        "DOCKER_BUILDKIT": "1"
+    },
+    "remoteEnv": {
+        // Add the toolchain executable to path
+        "PATH": "${containerEnv:PATH}:${containerWorkspace}/gcc-arm-none-eabi-9-2019-q4-major/bin",
+    },
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    "forwardPorts": [],
+    // Uncomment the next line to run commands after the container is created - for example installing curl.
+    // "postCreateCommand": "apt-get update && apt-get install -y curl",
+    // Uncomment when using a ptrace-based debugger like C++, Go, and Rust
+    "runArgs": [ "--name","pebble-firmware_devcontainer" ],
+    // Uncomment to use the Docker CLI from inside the container. See https://aka.ms/vscode-remote/samples/docker-from-docker.
+    "mounts": [ 
+        // VS Code will automatically "bind" mount your current workspace folder into the container
+    ],
+    // Uncomment to connect as a non-root user if you've added one. See https://aka.ms/vscode-remote/containers/non-root.
+    // "remoteUser": "vscode"
+}

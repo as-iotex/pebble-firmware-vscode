@@ -1,0 +1,4 @@
+[submodule "pebble-firmware"]
+	path = pebble-firmware
+	url = https://github.com/iotexproject/pebble-firmware
+	branch = aries
