@@ -1,8 +1,4 @@
 {
-    "nrf-connect.applications": [
-        "${workspaceFolder}/pebble-firmware/nrf/applications/Aries",
-        "${workspaceFolder}/pebble-firmware/nrf/applications/blinky"
-    ],
     "nrf-connect.topdir": "/nrf-connect-sdk/v1.4.0",
     "nrf-connect.west.env": {
         "$base": "terminal",
